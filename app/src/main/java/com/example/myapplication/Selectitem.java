@@ -46,7 +46,7 @@ import jp.wasabeef.glide.transformations.CropCircleTransformation;
 
 import static android.view.View.GONE;
 
-public class Selectitem extends AppCompatActivity{
+public class Selectitem extends AppCompatActivity{ // 장터 상품 선택 액티비티 
 
     String title;
     String price;
@@ -162,7 +162,7 @@ public class Selectitem extends AppCompatActivity{
 
 
 
-        btnchat.setOnClickListener(new View.OnClickListener(){
+        btnchat.setOnClickListener(new View.OnClickListener(){ // 대화버튼
             @Override
             public void onClick(View view){
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
