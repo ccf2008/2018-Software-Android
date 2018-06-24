@@ -23,7 +23,7 @@ import java.util.Collections;
 import java.util.List;
 
 
-public class Mybid extends AppCompatActivity {
+public class Mybid extends AppCompatActivity { // 내가 입찰한 물품들을 보여주는 화면, 내 정보에서 내가 입찰한 물건을 클릭하면 표시된다.
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     String TAG = getClass().getSimpleName();
@@ -54,8 +54,8 @@ public class Mybid extends AppCompatActivity {
         mItem = new ArrayList<>();
         mItem2 = new ArrayList<>();
 
-        final Button btn_1 = (Button)findViewById(R.id.firstbtn);
-        btn_1.setOnClickListener(new View.OnClickListener(){
+        final Button btn_1 = (Button)findViewById(R.id.firstbtn);  // 각각의 버튼들은 카테고리를 나타내며 누르면 그 카테고리에 맞는 물품만
+        btn_1.setOnClickListener(new View.OnClickListener(){       // 
             @Override
             public void onClick(View view){
                 btn_1.setEnabled(false);
