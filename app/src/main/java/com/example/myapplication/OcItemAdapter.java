@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
-public class OcItemAdapter extends RecyclerView.Adapter<OcItemAdapter.ViewHolder> {
+public class OcItemAdapter extends RecyclerView.Adapter<OcItemAdapter.ViewHolder> { // 경매 상품을 RecyclerView에서 표시하기 위한 Adapter
 
     List<OcItem> mItem;
     List<OcItem> mItem2;
@@ -80,7 +80,7 @@ public class OcItemAdapter extends RecyclerView.Adapter<OcItemAdapter.ViewHolder
     }
 
     @Override
-    public int getItemViewType(int position) {
+    public int getItemViewType(int position) { // 리스트의 첫번째와 나머지를 구분하기 위한 함수
         if(position==0){
             return 1;
         } else {
@@ -106,7 +106,7 @@ public class OcItemAdapter extends RecyclerView.Adapter<OcItemAdapter.ViewHolder
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) { // 상품의 갯수가 홀수개일 때와 짝수개일 때를 다르게 표현한다.
         if(number == "1"){
             SharedPreferences auto = context.getSharedPreferences("myoctionitem", Activity.MODE_PRIVATE);
             check = auto.getString("check", "");
@@ -158,7 +158,7 @@ public class OcItemAdapter extends RecyclerView.Adapter<OcItemAdapter.ViewHolder
                     .centerCrop().into(holder.ivItem2);
         }
 
-        holder.btnselect1.setOnClickListener(new View.OnClickListener() {
+        holder.btnselect1.setOnClickListener(new View.OnClickListener() { // 왼쪽 항목을 클릭했을 경우 
             @Override
             public void onClick(View view) {
                 myUid = FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -184,7 +184,7 @@ public class OcItemAdapter extends RecyclerView.Adapter<OcItemAdapter.ViewHolder
             }
         });
 
-        holder.btnselect2.setOnClickListener(new View.OnClickListener() {
+        holder.btnselect2.setOnClickListener(new View.OnClickListener() { // 오른쪽 항목을 선택했을 경우
             @Override
             public void onClick(View view) {
                 myUid = FirebaseAuth.getInstance().getCurrentUser().getUid();
