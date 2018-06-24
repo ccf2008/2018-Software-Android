@@ -30,7 +30,7 @@ import java.util.List;
 
 
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment { // 장터용 프래그먼트
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     String TAG = getClass().getSimpleName();
@@ -61,7 +61,7 @@ public class HomeFragment extends Fragment {
         mItem = new ArrayList<>();
         mItem2 = new ArrayList<>();
 
-        final Button btn_1 = (Button)v.findViewById(R.id.firstbtn);
+        final Button btn_1 = (Button)v.findViewById(R.id.firstbtn); // 여기서부터 카테고리의 7가지 분류용 버튼, 버튼을 누르면 분류에 맞는 상품만 보여준다
         btn_1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -489,7 +489,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        Button btn_register = (Button) v.findViewById(R.id.btn_register);
+        Button btn_register = (Button) v.findViewById(R.id.btn_register); // 장터 상품 등록 버튼
         btn_register.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -503,13 +503,13 @@ public class HomeFragment extends Fragment {
         mRecyclerView.setAdapter(mAdapter);
         database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("items");
-        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() { // 데이터베이스로부터 장터 상품의 정보를 읽어서 어댑터로 보내는 함수
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
 
-                for(DataSnapshot dataSnapshot2: dataSnapshot.getChildren()){
+                for(DataSnapshot dataSnapshot2: dataSnapshot.getChildren()){ // 두개의 리스트에 번갈아 가면서 정보를 담는다
                     if(check == true) {
                         Item item = dataSnapshot2.getValue(Item.class);
                         mItem.add(item);
@@ -521,16 +521,16 @@ public class HomeFragment extends Fragment {
                         check = true;
                     }
                 }
-                if(check == false){
+                if(check == false){ // 상품의 개수가 홀수일 경우
                     Collections.reverse(mItem);
                     Collections.reverse(mItem2);
                     Item item = new Item();
                     mItem2.add(item);
                         SharedPreferences auto = activity.getSharedPreferences("item", Activity.MODE_PRIVATE);
                         SharedPreferences.Editor autoedit = auto.edit();
-                        autoedit.putString("check", "1");
+                        autoedit.putString("check", "1"); 
                         autoedit.commit();
-                } else{
+                } else{ // 상품의 개수가 짝수일 경우
                     Collections.reverse(mItem);
                     Collections.reverse(mItem2);
                         SharedPreferences auto = activity.getSharedPreferences("item", Activity.MODE_PRIVATE);
@@ -555,7 +555,7 @@ public class HomeFragment extends Fragment {
 
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(Context context) { // 예외 처리
         super.onAttach(context);
 
         if (context instanceof Activity) {
