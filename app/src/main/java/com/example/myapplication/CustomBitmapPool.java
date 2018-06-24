@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 
-public class CustomBitmapPool implements BitmapPool {
+public class CustomBitmapPool implements BitmapPool { // 비트맵 관리 양식
     @Override
     public int getMaxSize() {
         return 0;
