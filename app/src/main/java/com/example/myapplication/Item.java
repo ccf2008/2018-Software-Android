@@ -4,7 +4,7 @@ package com.example.myapplication;
  * Created by 이진재 on 2018-04-24.
  */
 
-public class Item {
+public class Item { // 장터 상품용 데이터베이스 
 
     public String title;
     public String price;
