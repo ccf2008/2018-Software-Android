@@ -15,7 +15,7 @@ import java.util.Random;
 
 import static java.lang.Thread.sleep;
 
-public class EmailLink extends AppCompatActivity {
+public class EmailLink extends AppCompatActivity { // 이메일 전송 액티비티
 
     EditText et;
     long lastPressed;
@@ -35,7 +35,7 @@ public class EmailLink extends AppCompatActivity {
         auth_email = in.getStringExtra("auth_email");
 
 
-        Button btnRegister = (Button)findViewById(R.id.btncheck_auth);
+        Button btnRegister = (Button)findViewById(R.id.btncheck_auth); // 인증 문자 확인 버튼
         btnRegister.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 et = (EditText)findViewById(R.id.etauth_number);
@@ -63,7 +63,7 @@ public class EmailLink extends AppCompatActivity {
 
         final Button btnreRegister = (Button)findViewById(R.id.btnrecheck);
 
-        btnreRegister.setOnClickListener(new View.OnClickListener(){
+        btnreRegister.setOnClickListener(new View.OnClickListener(){ // 이메일 재전송 버튼을 누른경우 새로운 문자열을 생성하고 메일을 다시 
 
             public void onClick(View view){
                 btnreRegister.setEnabled(false);
@@ -97,23 +97,23 @@ public class EmailLink extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed(){
+    public void onBackPressed(){ // 뒤로가기 처리
         if(System.currentTimeMillis() - lastPressed < 1500){
             finish();
         }
         lastPressed = System.currentTimeMillis();
     }
 
-    public void timeThread(final String auth_string, final String auth_email) {
+    public void timeThread(final String auth_string, final String auth_email) { // 인증메일을 보내는 함수
 
-        dialog = new ProgressDialog(EmailLink.this);
+        dialog = new ProgressDialog(EmailLink.this); // 이메일을 보내는 동안 다른 동작을 막는 다이얼로그
         dialog.setTitle("기다려주세요.");
         dialog.setMessage("인증메일을 보내는 중입니다.");
         dialog.setIndeterminate(true);
         dialog.setCancelable(false);
         dialog.show();
 
-        new Thread(new Runnable() {
+        new Thread(new Runnable() { // 쓰레드를 이용한 이메일 전송
             public void run() {
                 // TODO Auto-generated method stub
                 try {
