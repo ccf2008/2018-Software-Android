@@ -24,7 +24,7 @@ import java.util.List;
 
 
 
-public class ChattingFragment extends Fragment {
+public class ChattingFragment extends Fragment {  // 채팅 탭
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     String TAG = getClass().getSimpleName();
@@ -38,7 +38,7 @@ public class ChattingFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             Bundle savedInstanceState) { // 현재 생성되어 있는 대화방 목록을 보여주고 채팅창으로 연결시켜준다
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_chatting, container, false);
 
@@ -67,7 +67,7 @@ public class ChattingFragment extends Fragment {
                     database = FirebaseDatabase.getInstance();
                     DatabaseReference myRef = database.getReference("users").child(Uid);
                     myRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
+                        @Overrideㅊ
                         public void onDataChange(DataSnapshot dataSnapshot) {
                                 Friend friend = dataSnapshot.getValue(Friend.class);
 
@@ -96,7 +96,7 @@ public class ChattingFragment extends Fragment {
     }
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(Context context) {  // 예외 처리
         super.onAttach(context);
 
         if (context instanceof Activity) {
