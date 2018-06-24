@@ -4,7 +4,7 @@ package com.example.myapplication;
  * Created by 이진재 on 2018-04-24.
  */
 
-public class Friend {
+public class Friend { // 다른 사용자 정보를 받아오는 데이터베이스 
 
     public String email;
     public String key;
