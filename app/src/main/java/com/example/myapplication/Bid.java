@@ -31,7 +31,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class Bid extends AppCompatActivity {
+public class Bid extends AppCompatActivity {  // 경매 게시글에 입찰하기 위한 
 
     String title;
     String startprice;
@@ -63,7 +63,7 @@ public class Bid extends AppCompatActivity {
 
     @Override
 
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) { 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bid);
 
@@ -88,7 +88,7 @@ public class Bid extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference();
 
-        myRef.child("octionitems").child(itemkey).addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef.child("octionitems").child(itemkey).addListenerForSingleValueEvent(new ValueEventListener() { // 경매 상품의 정보를 읽어오는 함수
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
@@ -132,7 +132,7 @@ public class Bid extends AppCompatActivity {
         });
 
 
-        Button btnbid = (Button)findViewById(R.id.btnbid);
+        Button btnbid = (Button)findViewById(R.id.btnbid);  // 입찰버튼 함수
         btnbid.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -145,7 +145,7 @@ public class Bid extends AppCompatActivity {
                 int recentpricen = Integer.parseInt(recentprice);
                 int endpricen = Integer.parseInt(endprice);
 
-                if(etbidprice.getText().toString().isEmpty()||etbidprice.getText().toString().equals("")) {
+                if(etbidprice.getText().toString().isEmpty()||etbidprice.getText().toString().equals("")) { // 예외 처리
                     Toast.makeText(Bid.this, "입찰 가격을 입력해 주세요..", Toast.LENGTH_SHORT).show();
                 } else{
                     int bidpricen = Integer.parseInt(etbidprice.getText().toString());
@@ -157,9 +157,9 @@ public class Bid extends AppCompatActivity {
                         Toast.makeText(Bid.this, "입찰 가격은 현재 가격보다 높아야 합니다.", Toast.LENGTH_SHORT).show();
                     else if (endpricen < bidpricen)
                         Toast.makeText(Bid.this, "입찰 가격은 즉시구매 가격보다 낮아야 합니다.", Toast.LENGTH_SHORT).show();
-                    else if ((endpricen == bidpricen) || bidmankey.equals(recentmankey)) {
+                    else if ((endpricen == bidpricen) || bidmankey.equals(recentmankey)) { // 입찰이 이루어질 경우
 
-                        recentprice = etbidprice.getText().toString();
+                        recentprice = etbidprice.getText().toString();  
                         FirebaseDatabase.getInstance().getReference("users").child(recentmankey).child("myBid").child(itemkey).setValue(null);
                         FirebaseDatabase.getInstance().getReference("octionitems").child(itemkey).child("recentprice").setValue(recentprice);
                         FirebaseDatabase.getInstance().getReference("octionitems").child(itemkey).child("bidmankey").setValue(bidmankey);
@@ -177,7 +177,7 @@ public class Bid extends AppCompatActivity {
                             public void onDataChange(DataSnapshot dataSnapshot) {
                                 for(DataSnapshot item : dataSnapshot.getChildren()) {
                                     ChatModel.Mychat chatModel = item.getValue(ChatModel.Mychat.class);
-                                    if (chatModel.Uid.equals(useruid)) {
+                                    if (chatModel.Uid.equals(useruid)) {  // 이미 판매자와의 채팅방이 있을 경우의 낙찰
                                         chatRoomUid = chatModel.chatRoomUid;
                                         sendGcm();
                                         Intent in = new Intent(Bid.this,ChatActivity.class);
@@ -196,7 +196,7 @@ public class Bid extends AppCompatActivity {
                                 // Failed to read value
                             }
                         });
-                        sendGcm();
+                        sendGcm();  // 판매자와의 채팅방을 새로 생성해야 하는 경우
                         Intent in = new Intent(Bid.this,ChatActivity.class);
                         in.putExtra("friendUid", useruid);
                         in.putExtra("chatRoomUid", chatRoomUid );
@@ -222,7 +222,7 @@ public class Bid extends AppCompatActivity {
         });
     }
 
-    void sendGcm(){
+    void sendGcm(){   // 푸시 알림 전송 
         Gson gson = new Gson();
 
         NotificationModel notificationModel = new NotificationModel();
