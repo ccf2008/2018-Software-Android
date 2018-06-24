@@ -24,8 +24,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity extends AppCompatActivity { // 처음 어플리케이션에 접속 시에 나타나는 화면, google 계정 API를 이용하여 사용자의 
+                                                      // 정보를 읽어온다
     String TAG = "MainActivity";
     EditText etEmail;
     EditText etPassword;
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnRegister = (Button)findViewById(R.id.btnRegister);
 
-        btnRegister.setOnClickListener(new View.OnClickListener(){
+        btnRegister.setOnClickListener(new View.OnClickListener(){ // 회원가입 시에 Register Activity 화면으로 이동
             @Override
             public void onClick(View view){
                 Intent in = new Intent(MainActivity.this, Register.class);
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private void userLogin(final String email,final String password){
+    private void userLogin(final String email,final String password){ // 로그인 시에 google 계정 API를 이용하여 인증 후에 tabActivity로 이동
         Log.d(TAG, email + password);
         pbLogin.setVisibility(View.VISIBLE);
         mAuth.signInWithEmailAndPassword(email,password)
