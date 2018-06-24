@@ -24,7 +24,7 @@ import java.util.Collections;
 import java.util.List;
 
 
-public class Mymarket extends AppCompatActivity {
+public class Mymarket extends AppCompatActivity { // 내가 등록한 장터 상품들을 보여주는 화면, 내 정보에서 내 장터를 클릭하면 표시된다
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     String TAG = getClass().getSimpleName();
@@ -55,7 +55,7 @@ public class Mymarket extends AppCompatActivity {
         mItem = new ArrayList<>();
         mItem2 = new ArrayList<>();
 
-        final Button btn_1 = (Button)findViewById(R.id.firstbtn);
+        final Button btn_1 = (Button)findViewById(R.id.firstbtn);  // 여기서부터 7개의 카테고리별 버튼
         btn_1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
