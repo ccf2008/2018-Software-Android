@@ -48,7 +48,7 @@ import java.util.Hashtable;
 
 import static android.view.View.GONE;
 
-public class Selectmyoctionitem extends AppCompatActivity{
+public class Selectmyoctionitem extends AppCompatActivity{ // 내 경매 상품 선택 액티비티
 
     String title;
     String startprice;
@@ -186,7 +186,7 @@ public class Selectmyoctionitem extends AppCompatActivity{
             }
         });
 
-        btnsave.setOnClickListener(new View.OnClickListener() {
+        btnsave.setOnClickListener(new View.OnClickListener() { // 수정 버튼
             @Override
             public void onClick(View view) {
                 if(tvtitle.getText().toString().isEmpty()||tvtitle.getText().toString().equals("")) Toast.makeText(Selectmyoctionitem.this, "상품명을 입력해 주세요..", Toast.LENGTH_SHORT).show();
@@ -212,7 +212,7 @@ public class Selectmyoctionitem extends AppCompatActivity{
             }
         });
 
-        btndelete.setOnClickListener(new View.OnClickListener() {
+        btndelete.setOnClickListener(new View.OnClickListener() { // 삭제 버튼
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder alert_confirm = new AlertDialog.Builder(Selectmyoctionitem.this);
@@ -276,7 +276,7 @@ public class Selectmyoctionitem extends AppCompatActivity{
         });
     }
 
-    public void uploadimage(){
+    public void uploadimage(){ // 이미지 업로드용 함수
         StorageReference mountainsRef = mStorageRef.child("octionitems").child(itemkey+".jpg");
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
@@ -394,7 +394,7 @@ public class Selectmyoctionitem extends AppCompatActivity{
         }
     }
 
-    public int exifOrientationToDegrees(int exifOrientation)
+    public int exifOrientationToDegrees(int exifOrientation) // 이미지 회전 보정용 함수
     {
         if(exifOrientation == ExifInterface.ORIENTATION_ROTATE_90)
         {
@@ -448,7 +448,7 @@ public class Selectmyoctionitem extends AppCompatActivity{
     }
 
     @Override
-    public void onBackPressed(){
+    public void onBackPressed(){ // 뒤로가기 
         if(number.equals("0")) {
             setResult(1);
             finish();
