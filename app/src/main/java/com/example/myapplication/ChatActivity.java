@@ -45,7 +45,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class ChatActivity extends AppCompatActivity {
+public class ChatActivity extends AppCompatActivity {  // 채팅을  액티비티
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -95,7 +95,7 @@ public class ChatActivity extends AppCompatActivity {
         etText = (EditText)findViewById(R.id.etText);
         btnSend = (Button)findViewById(R.id.btnSend);
 
-        btnSend.setOnClickListener(new View.OnClickListener(){
+        btnSend.setOnClickListener(new View.OnClickListener(){ // 메세지 전송버튼을 눌렀을 경우
 
             @Override
             public void onClick(View view){
@@ -126,7 +126,7 @@ public class ChatActivity extends AppCompatActivity {
                     chatModel.users.put(key,true);
                     chatModel.users.put(stChatid,true);
 
-                    if(chatRoomUid == null){
+                    if(chatRoomUid == null){  // 상대방과의 채팅방이 없을 경우 채팅방을 새로 생성하고 대화시작
                         btnSend.setEnabled(false);
                         chatRoomUid = Ref.getKey().toString();
                         Ref.setValue(chatModel).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -137,7 +137,7 @@ public class ChatActivity extends AppCompatActivity {
                         });
                         sendGcm();
                         etText.setText("");
-                    } else{
+                    } else{ // 기존에 상대방과의 채팅방이 있을 경우 바로 대화 시작
                         ChatModel.Comment comment = new ChatModel.Comment();
                         comment.uid = key;
                         comment.message = stText;
@@ -161,7 +161,7 @@ public class ChatActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
 
 
-            if(chatRoomUid != null) {
+            if(chatRoomUid != null) { // 채팅창이 켜졌을 때 기존의 대화 내용을 불러옴
                 myRef = database.getReference("chatrooms").child(chatRoomUid).child("comments");
                 myRef.addChildEventListener(new ChildEventListener() {
                     @Override
@@ -195,7 +195,7 @@ public class ChatActivity extends AppCompatActivity {
             }
     }
 
-    void sendGcm(){
+    void sendGcm(){  // 푸시 알림 전송 함수
         Gson gson = new Gson();
 
 
@@ -226,7 +226,7 @@ public class ChatActivity extends AppCompatActivity {
         });
     }
 
-    void checkChatRoom(final String stText, final String friendname){
+    void checkChatRoom(final String stText, final String friendname){ // 채팅방을 새로 생성했을 경우 데이터베이스를 업데이트하고 메세지를 전송하는 함수
                         ChatModel.Mychat mychat = new ChatModel.Mychat();
                         mychat.Uid = stChatid;
                         mychat.chatRoomUid = chatRoomUid;
@@ -252,7 +252,7 @@ public class ChatActivity extends AppCompatActivity {
                         btnSend.setEnabled(true);
     }
 
-    void showRoom(final String mfriendname){
+    void showRoom(final String mfriendname){ // 채팅글을 업데이트 하는 함수
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
@@ -299,7 +299,7 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed(){
+    public void onBackPressed(){ // 뒤로가기 처리 
             setResult(0);
             finish();
     }
