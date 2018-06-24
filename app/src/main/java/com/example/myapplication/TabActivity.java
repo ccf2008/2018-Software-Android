@@ -21,7 +21,7 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TabActivity extends AppCompatActivity {
+public class TabActivity extends AppCompatActivity { // 프레그먼트들이 실행되는 바탕 액티비티 
 
         Fragment fragment;
         long lastPressed;
@@ -30,7 +30,7 @@ public class TabActivity extends AppCompatActivity {
                 = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) { // 프레그먼트 이동
                 switch (item.getItemId()) {
                     case R.id.navigation_home:
                         fragment = new HomeFragment();
@@ -80,7 +80,7 @@ public class TabActivity extends AppCompatActivity {
         }
 
     @Override
-    public void onBackPressed(){
+    public void onBackPressed(){ // 뒤로가기 처리
         if(System.currentTimeMillis() - lastPressed < 1500){
             moveTaskToBack(true);
             finish();
@@ -90,7 +90,7 @@ public class TabActivity extends AppCompatActivity {
         lastPressed = System.currentTimeMillis();
     }
 
-    void passPushTokenToServer(){
+    void passPushTokenToServer(){ // 사용자의 푸쉬 토큰을 데이터베이스에 업로드 하는 함수
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         String token = FirebaseInstanceId.getInstance().getToken();
         Map<String, Object> map = new HashMap<>();
