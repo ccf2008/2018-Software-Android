@@ -25,10 +25,10 @@ import static android.support.v4.app.NotificationCompat.DEFAULT_VIBRATE;
  * Created by 이진재 on 2018-05-17.
  */
 
-public class MyFirebaseMessagingService extends FirebaseMessagingService {
-
+public class MyFirebaseMessagingService extends FirebaseMessagingService {  // google notification API를 사용하기 위해 만들어진 서비스
+                                                                            // 전체적인 notification을 관리한다
     @Override
-    public void onMessageReceived(RemoteMessage remoteMessage) {
+    public void onMessageReceived(RemoteMessage remoteMessage) {  // data의 title과 text를 읽어와 안드로이드에 notification을 내보낸다
 
         if (remoteMessage.getData().size() > 0) {
 
@@ -47,7 +47,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         // message, here is where that should be initiated. See sendNotification method below.
     }
 
-    private void sendNotification(String title, String text) {
+    private void sendNotification(String title, String text) { // notification을 보낼 때 사용하는 함수
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
