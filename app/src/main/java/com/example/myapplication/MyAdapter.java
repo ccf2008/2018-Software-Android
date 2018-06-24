@@ -8,8 +8,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
-    private String[] mDataset;
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> { // ItemAdapter, OcItemAdapter에 사용하기 위해 지정된 Adapter
+    private String[] mDataset;                                              // RecyclerView의 전체적인 틀을 
     List<ChatModel.Comment> mChat;
     String stUid;
     String friendname;
