@@ -69,7 +69,7 @@ import jp.wasabeef.glide.transformations.CropCircleTransformation;
 import static android.view.View.GONE;
 
 
-public class ProfileFragment extends Fragment {
+public class ProfileFragment extends Fragment { // 프로필 화면
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     String TAG = getClass().getSimpleName();
@@ -110,7 +110,7 @@ public class ProfileFragment extends Fragment {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference();
 
-        myRef.child("users").child(stUid).addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef.child("users").child(stUid).addListenerForSingleValueEvent(new ValueEventListener() { // 사용자 정보를 데이터베이스에서 읽어온 뒤 표시
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
@@ -149,8 +149,8 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        if(ContextCompat.checkSelfPermission(getActivity(),
-                Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
+        if(ContextCompat.checkSelfPermission(getActivity(), 
+                Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){ // 저장소 접근 허가용 함수
             if(ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
                     android.Manifest.permission.READ_EXTERNAL_STORAGE)){
 
@@ -170,7 +170,7 @@ public class ProfileFragment extends Fragment {
                 startActivityForResult(i,1);
             }
         });
-        Button btnMymarket = (Button)v.findViewById(R.id.btnMymarket);
+        Button btnMymarket = (Button)v.findViewById(R.id.btnMymarket); // 내 장터 버튼
         btnMymarket.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -179,7 +179,7 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        Button btnMyoction = (Button)v.findViewById(R.id.btnMyoction);
+        Button btnMyoction = (Button)v.findViewById(R.id.btnMyoction); // 내 경매 버튼
         btnMyoction.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -188,7 +188,7 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        Button btnLogout = (Button)v.findViewById(R.id.btnLogout);
+        Button btnLogout = (Button)v.findViewById(R.id.btnLogout); // 로그아웃 버튼
         btnLogout.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -203,7 +203,7 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        Button btnmybid = (Button)v.findViewById(R.id.btnMybid);
+        Button btnmybid = (Button)v.findViewById(R.id.btnMybid); // 내가 낙찰한 상품 버튼
         btnmybid.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -215,7 +215,7 @@ public class ProfileFragment extends Fragment {
         return v;
     }
 
-    public void uploadimage(){
+    public void uploadimage(){ // 이미지 업로드용 함수
         StorageReference mountainsRef = mStorageRef.child("users").child(stUid+".jpg");
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
@@ -307,7 +307,7 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-    public int exifOrientationToDegrees(int exifOrientation)
+    public int exifOrientationToDegrees(int exifOrientation) // 이미지 회전 보정용 함수
     {
         if(exifOrientation == ExifInterface.ORIENTATION_ROTATE_90)
         {
