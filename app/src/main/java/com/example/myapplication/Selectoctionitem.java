@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import jp.wasabeef.glide.transformations.CropCircleTransformation;
 
-public class Selectoctionitem extends AppCompatActivity {
+public class Selectoctionitem extends AppCompatActivity { // 다른 사용자의 경매 상품 선택 액티비티
 
     String title;
     String startprice;
@@ -172,7 +172,7 @@ public class Selectoctionitem extends AppCompatActivity {
 
 
 
-        btnbid.setOnClickListener(new View.OnClickListener(){
+        btnbid.setOnClickListener(new View.OnClickListener(){ // 입찰 버튼
             @Override
             public void onClick(View view){
                 if(soldout.equals("0")){
@@ -188,7 +188,7 @@ public class Selectoctionitem extends AppCompatActivity {
 
     }
     @Override
-    public void onBackPressed(){
+    public void onBackPressed(){ // 뒤로가기 처리
             setResult(1);
             finish();
     }
