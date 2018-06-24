@@ -25,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import jp.wasabeef.glide.transformations.CropCircleTransformation;
 
-public class Selectbid extends AppCompatActivity {
+public class Selectbid extends AppCompatActivity { // 내가 낙찰한 상품 화면에서의 상품 선택 액티비티
 
     String title;
     String startprice;
@@ -158,7 +158,7 @@ public class Selectbid extends AppCompatActivity {
 
 
 
-        btnchat.setOnClickListener(new View.OnClickListener(){
+        btnchat.setOnClickListener(new View.OnClickListener(){ // 대화버튼 
             @Override
             public void onClick(View view){
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
