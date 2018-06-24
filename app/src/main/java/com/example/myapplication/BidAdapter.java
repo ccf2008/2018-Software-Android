@@ -19,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
-public class BidAdapter extends RecyclerView.Adapter<BidAdapter.ViewHolder> {
+public class BidAdapter extends RecyclerView.Adapter<BidAdapter.ViewHolder> { // 내가 낙찰한 상품 리스트용 
 
     List<OcItem> mItem;
     List<OcItem> mItem2;
@@ -71,14 +71,14 @@ public class BidAdapter extends RecyclerView.Adapter<BidAdapter.ViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public BidAdapter(List<OcItem> mItem, List<OcItem> mItem2, Context context, String number) {
+    public BidAdapter(List<OcItem> mItem, List<OcItem> mItem2, Context context, String number) { // 프래그먼트로부터 표시할 데이터 받아오기
         this.mItem = mItem;
         this.mItem2 = mItem2;
         this.context = context;
         this.number = number;
     }
     @Override
-    public int getItemViewType(int position) {
+    public int getItemViewType(int position) { // 첫번째로 표시 할 리스트의 경우와 그렇지 않을 경우를 구분
         if(position==0){
             return 1;
         } else {
@@ -87,7 +87,8 @@ public class BidAdapter extends RecyclerView.Adapter<BidAdapter.ViewHolder> {
     }
     // Create new views (invoked by the layout manager)
     @Override
-    public BidAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public BidAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) { // 첫번째로 표시 할 리스트의 경우와 그렇지 않을 경우를
+                                                                                      // 다르게 표현
         // create a new view
         View v;
         if(viewType==1) {
@@ -104,11 +105,11 @@ public class BidAdapter extends RecyclerView.Adapter<BidAdapter.ViewHolder> {
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) { // 등록된 상품의 개수가 홀수일 경우와 짝수일 경우를 다르게 
         SharedPreferences auto = context.getSharedPreferences("biditem", Activity.MODE_PRIVATE);
         check = auto.getString("check", "");
 
-        if (check.equals("1")) {
+        if (check.equals("1")) {    
             stPhoto = mItem.get(position).getSmall_photo();
             holder.title.setText(mItem.get(position).getTitle());
             holder.recentprice.setText("낙찰가 : " +mItem.get(position).getRecentprice()+"원");
@@ -151,7 +152,7 @@ public class BidAdapter extends RecyclerView.Adapter<BidAdapter.ViewHolder> {
                     .centerCrop().into(holder.ivItem2);
         }
 
-        holder.btnselect1.setOnClickListener(new View.OnClickListener() {
+        holder.btnselect1.setOnClickListener(new View.OnClickListener() {  // 리스트의  상품이 선택될 경우
             @Override
             public void onClick(View view) {
                 myUid = FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -171,7 +172,7 @@ public class BidAdapter extends RecyclerView.Adapter<BidAdapter.ViewHolder> {
             }
         });
 
-        holder.btnselect2.setOnClickListener(new View.OnClickListener() {
+        holder.btnselect2.setOnClickListener(new View.OnClickListener() { // 리스트의 오른쪽 상품이 선택될 경우
             @Override
             public void onClick(View view) {
                 myUid = FirebaseAuth.getInstance().getCurrentUser().getUid();
