@@ -7,7 +7,7 @@ import java.util.Map;
  * Created by 이진재 on 2018-05-07.
  */
 
-public class ChatModel {
+public class ChatModel { // 데이터베이스에서 채팅방 및 채팅글을 받아오는 양식
 
     public Map<String, Boolean> users = new HashMap<>();
     public Map<String, Comment> comments = new HashMap<>();
