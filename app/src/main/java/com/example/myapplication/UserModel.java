@@ -4,7 +4,7 @@ package com.example.myapplication;
  * Created by 이진재 on 2018-04-24.
  */
 
-public class UserModel {
+public class UserModel { // 사용자 정보 데이터베이스 양식
 
     public String email;
     public String key;
