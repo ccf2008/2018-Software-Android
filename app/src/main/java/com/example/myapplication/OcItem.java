@@ -4,7 +4,7 @@ package com.example.myapplication;
  * Created by 이진재 on 2018-04-24.
  */
 
-public class OcItem {
+public class OcItem { // 경매 상품 데이터베이스 양식
 
     public String title;
     public String recentprice;
