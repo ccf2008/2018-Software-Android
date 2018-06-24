@@ -51,7 +51,7 @@ import java.util.Hashtable;
 
 import static android.view.View.GONE;
 
-public class RegistOcItem extends AppCompatActivity {
+public class RegistOcItem extends AppCompatActivity { // 경매장 상품등록 액티비티
 
 
     String title;
@@ -98,7 +98,7 @@ public class RegistOcItem extends AppCompatActivity {
         }
     }
 
-        Button btnfianlregister = (Button)findViewById(R.id.btnfinalregister);
+        Button btnfianlregister = (Button)findViewById(R.id.btnfinalregister); // 경매 상품 등록 버튼
         btnfianlregister.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -171,7 +171,7 @@ public class RegistOcItem extends AppCompatActivity {
 
     }
 
-    public void uploadimage(){
+    public void uploadimage(){ // 이미지 업로드용 함수
         itemuid = Ref.getKey().toString();
         StorageReference mountainsRef = mStorageRef.child("octionitems").child(itemuid+".jpg");
 
@@ -269,7 +269,7 @@ public class RegistOcItem extends AppCompatActivity {
         }
     }
 
-    public int exifOrientationToDegrees(int exifOrientation)
+    public int exifOrientationToDegrees(int exifOrientation) // 이미지 회전 보정용 함수
     {
         if(exifOrientation == ExifInterface.ORIENTATION_ROTATE_90)
         {
@@ -320,7 +320,7 @@ public class RegistOcItem extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed(){
+    public void onBackPressed(){ // 뒤로가기 처리
         AlertDialog.Builder alert_confirm = new AlertDialog.Builder(RegistOcItem.this);
         alert_confirm.setMessage("작성을 취소하시겠습니까?").setCancelable(false).setPositiveButton("확인",
                 new DialogInterface.OnClickListener() {
