@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import static android.content.ContentValues.TAG;
 
-public class SplashActivity extends Activity {
+public class SplashActivity extends Activity { // 어플리케이션 구동 시 로딩 액티비티 
     private FirebaseAuth mAuth;
     FirebaseDatabase database;
     String stname;
@@ -38,7 +38,7 @@ public class SplashActivity extends Activity {
         String loginId = auto.getString("inputId","");
         String loginPwd = auto.getString("inputPwd","");
 
-        if(!loginId.equals("") && !loginPwd.equals("")) {
+        if(!loginId.equals("") && !loginPwd.equals("")) { // 이미 로그인 경력이 있는 경우 자동 로그인
             userLogin(loginId,loginPwd);
         }
         else {
@@ -48,7 +48,7 @@ public class SplashActivity extends Activity {
         }
     }
 
-    private void userLogin(final String email,final String password){
+    private void userLogin(final String email,final String password){ // 로그인 함수
         Log.d(TAG, email + password);
         mAuth.signInWithEmailAndPassword(email,password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
