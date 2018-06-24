@@ -6,7 +6,7 @@ import android.app.Notification;
  * Created by 이진재 on 2018-05-17.
  */
 
-public class NotificationModel {
+public class NotificationModel { // 알림 데이터베이스 
 
     public String to;
     public Data data = new Data();
