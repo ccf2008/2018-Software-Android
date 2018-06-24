@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
-public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
+public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> { // RecyclerView에서 Item을 보기 위한 양식 제공
 
     List<Item> mItem;
     List<Item> mItem2;
@@ -39,7 +39,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {  // 장터 화면에서 표시되는 양식
         // each data item is just a string in this case
 
         public ImageView ivItem;
@@ -103,7 +103,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {  // 최신순으로 데이터베이스의 게시글들을 보여주기 위해 경우를 나눔
 
         if(number == "1"){
             SharedPreferences auto = context.getSharedPreferences("myitem", Activity.MODE_PRIVATE);
@@ -148,7 +148,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
                     .centerCrop().into(holder.ivItem2);
         }
 
-        holder.btnselect1.setOnClickListener(new View.OnClickListener() {
+        holder.btnselect1.setOnClickListener(new View.OnClickListener() {  // 게시물 사진을 클릭하면 그 게시글로 이동함
             @Override
             public void onClick(View view) {
                 myUid = FirebaseAuth.getInstance().getCurrentUser().getUid();
