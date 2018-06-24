@@ -23,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Hashtable;
 
-public class Password extends AppCompatActivity {
+public class Password extends AppCompatActivity { // 회원가입 시 회원정보를 입력하는 액티비티
 
     private FirebaseAuth mAuth;
     String TAG = "MainActivity";
@@ -84,7 +84,7 @@ public class Password extends AppCompatActivity {
     }
 
 
-    public void registerUser(String email, String password, final String stschoolnumber, final String stname){
+    public void registerUser(String email, String password, final String stschoolnumber, final String stname){ // 데이터베이스에 사용자 등록함수
         pbLogin.setVisibility(View.VISIBLE);
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -119,7 +119,7 @@ public class Password extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed(){
+    public void onBackPressed(){ // 뒤로가기 처리
         if(System.currentTimeMillis() - lastPressed < 1500){
             moveTaskToBack(true);
             finish();
