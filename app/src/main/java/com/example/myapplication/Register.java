@@ -25,7 +25,7 @@ import java.util.Random;
 
 import javax.sql.DataSource;
 
-public class Register extends AppCompatActivity implements View.OnClickListener{
+public class Register extends AppCompatActivity implements View.OnClickListener{ // 인증 메일 전송용 액티비티 
 
     Intent in = getIntent();
 
@@ -49,7 +49,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
         }
 
         @Override
-        public void onClick(View arg0) {
+        public void onClick(View arg0) { // 인증 문자열 생성
             StringBuffer temp = new StringBuffer();
             Random rnd = new Random();
             for (int i = 0; i < 6; i++) {
@@ -91,7 +91,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
             }
         }
 
-        public void timeThread(final String auth_string) {
+        public void timeThread(final String auth_string) { // 스레드를 이용한 메일 전송
             dialog = new ProgressDialog(this);
             dialog.setTitle("기다려주세요.");
             dialog.setMessage("인증메일을 보내는 중입니다.");
@@ -129,7 +129,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
         }
 
     @Override
-    public void onBackPressed(){
+    public void onBackPressed(){ // 뒤로가기 처리
         if(System.currentTimeMillis() - lastPressed < 1500){
             finish();
         }
