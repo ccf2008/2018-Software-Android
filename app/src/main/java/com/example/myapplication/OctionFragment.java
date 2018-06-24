@@ -26,7 +26,7 @@ import java.util.Collections;
 import java.util.List;
 
 
-public class OctionFragment extends Fragment {
+public class OctionFragment extends Fragment { // 경매장 화면 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     String TAG = getClass().getSimpleName();
@@ -56,7 +56,7 @@ public class OctionFragment extends Fragment {
         mItem = new ArrayList<>();
         mItem2 = new ArrayList<>();
 
-        final Button btn_1 = (Button)v.findViewById(R.id.firstbtn);
+        final Button btn_1 = (Button)v.findViewById(R.id.firstbtn); // 여기서부터 7개의 카테고리별 버튼
         btn_1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -491,7 +491,7 @@ public class OctionFragment extends Fragment {
             }
         });
 
-        Button btn_register = (Button) v.findViewById(R.id.btn_register);
+        Button btn_register = (Button) v.findViewById(R.id.btn_register); // 경매등록 버튼
         btn_register.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -505,7 +505,7 @@ public class OctionFragment extends Fragment {
         mRecyclerView.setAdapter(mAdapter);
         database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("octionitems");
-        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() { 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
@@ -556,7 +556,7 @@ public class OctionFragment extends Fragment {
 
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(Context context) { // 예외처리
         super.onAttach(context);
 
         if (context instanceof Activity) {
