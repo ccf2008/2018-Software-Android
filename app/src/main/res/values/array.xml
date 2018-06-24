@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="category">
+        <item > 의류</item>
+        <item > 디지털</item>
+        <item > 도서</item>
+        <item > 완구</item>
+        <item > 스포츠</item>
+        <item > 오피스</item>
+    </string-array>
+</resources>
