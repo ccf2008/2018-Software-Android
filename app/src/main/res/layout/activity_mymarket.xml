@@ -1,0 +1,114 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:clickable="true"
+    tools:context="com.example.myapplication.Mymarket">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pnum"
+        android:background="@color/colorPrimaryDark">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="내 장터"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/font"
+            android:textColor="#ffffff"
+            android:textSize="25dp"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/pnum"
+        android:id="@+id/categori"
+        android:background="@drawable/layout_rectangle"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarSize="0dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <Button
+                android:id="@+id/firstbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="전 체"
+                android:textStyle="bold"
+                android:background="#00ffffff"/>
+
+            <Button
+                android:id="@+id/secondbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#00ffffff"
+                android:textStyle="bold"
+                android:layout_toRightOf="@+id/firstbtn"
+                android:text="의 류"/>
+
+            <Button
+                android:id="@+id/thirdbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#00ffffff"
+                android:textStyle="bold"
+                android:layout_toRightOf="@+id/secondbtn"
+                android:text="디지털"/>
+
+            <Button
+                android:id="@+id/fourthbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#00ffffff"
+                android:textStyle="bold"
+                android:layout_toRightOf="@+id/thirdbtn"
+                android:text="도 서"/>
+
+                <Button
+                    android:id="@+id/fifthbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="#00ffffff"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@+id/fourthbtn"
+                    android:text="완 구"/>
+                <Button
+                    android:id="@+id/sixthbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="#00ffffff"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@+id/fifthbtn"
+                    android:text="스포츠"/>
+                <Button
+                    android:id="@+id/seventhbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="#00ffffff"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@+id/sixthbtn"
+                    android:text="오피스"/>
+            </RelativeLayout>
+
+        </HorizontalScrollView>
+    </RelativeLayout>
+
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@+id/categori"
+        android:id="@+id/rv_item"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</RelativeLayout>

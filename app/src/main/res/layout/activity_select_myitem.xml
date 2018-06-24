@@ -1,0 +1,235 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeeeee"
+    android:clickable="true"
+    tools:context="com.example.myapplication.ProfileFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/layoutiv">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="내 게시글"
+            android:fontFamily="@font/font"
+            android:textColor="#ffffff"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:id="@+id/layoutimage"
+        android:padding="6dp"
+        android:layout_below="@+id/tvprofile"
+        android:background="#dfffffff">
+
+        <ImageView
+            android:layout_width="330dp"
+            android:layout_height="330dp"
+            android:id="@+id/ivImage"
+            android:layout_centerInParent="true" />
+
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:id="@+id/pbLogin"
+            android:layout_marginTop="120dp"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="342dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        android:id="@+id/layoutshow"
+        android:layout_centerHorizontal="true"
+        android:background="#ffffff"
+        android:layout_below="@+id/layoutimage">
+
+        <TextView
+            android:id="@+id/tvtitle_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="상품명을 입력해 주세요."
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <EditText
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:id="@+id/tvtitle"
+            android:paddingStart="10dp"
+            android:layout_below="@+id/tvtitle_tag"
+            android:paddingEnd="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/real_ettext_bubble"
+            />
+
+        <View
+            android:layout_below="@+id/tvtitle"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:id="@+id/vtitle"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/underline" >
+        </View>
+
+        <TextView
+            android:id="@+id/tvprice_tag"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="가격을 입력해 주세요."
+            android:textColor="#000000"
+            android:layout_below="@+id/tvtitle"
+            android:textSize="12sp" />
+
+        <EditText
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:id="@+id/tvprice"
+            android:layout_marginLeft="20dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:inputType="number"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/tvprice_tag"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/real_ettext_bubble"
+            />
+
+        <View
+            android:layout_below="@+id/tvprice"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:id="@+id/vprice"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/underline" >
+        </View>
+
+        <TextView
+            android:id="@+id/tvdetail_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="제품 상세설명을 입력해 주세요."
+            android:textColor="#000000"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/tvprice"
+            android:textSize="12sp" />
+
+        <EditText
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvdetail"
+            android:layout_marginLeft="20dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:maxLines="6"
+            android:isScrollContainer="true"
+            android:minHeight="40dp"
+            android:layout_below="@+id/tvdetail_tag"
+            android:background="@drawable/real_ettext_bubble"
+            />
+
+        <View
+            android:layout_below="@+id/tvdetail"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:id="@+id/vdetail"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/underline" >
+        </View>
+
+        <TextView
+            android:id="@+id/tvcategori"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvdetail"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:text="제품 분류를 선택 해 주세요."
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <Spinner
+            android:id="@+id/spcategori"
+            android:layout_width="270dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/tvcategori"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/real_ettext_bubble"
+            android:entries="@array/category"></Spinner>
+
+
+
+    </RelativeLayout>
+    <Button
+    android:layout_width="280dp"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/layoutshow"
+    android:layout_centerHorizontal="true"
+    android:text="저장하기"
+    android:layout_marginTop="10dp"
+    android:textColor="#ffffff"
+    android:textStyle="bold"
+    android:background="@drawable/button_bubble"
+    android:id="@+id/btnsave"/>
+
+    <Button
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnsave"
+        android:layout_centerHorizontal="true"
+        android:text="게시글 삭제하기"
+        android:layout_marginTop="20dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/button_red"
+        android:id="@+id/btndelete"/>
+
+</RelativeLayout>
+
+
+</ScrollView>

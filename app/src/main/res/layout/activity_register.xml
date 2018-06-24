@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeeeee"
+    tools:context="com.example.myapplication.Register">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  PNUM 회원가입  "
+        android:id="@+id/tvregister"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#ffffff"
+        android:fontFamily="@font/font"
+        android:textSize="20sp"
+        />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="30dp"
+        android:paddingBottom="50dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/layout_bubble"
+        android:layout_marginHorizontal="30dp"
+        >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="부산대학교 이메일 주소를 입력해 주세요."
+        android:id="@+id/tvschoolnumber"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="  이메일"
+        android:id="@+id/etschoolnumber"
+        android:layout_below="@+id/tvschoolnumber"
+        android:inputType="textEmailAddress"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textSize="12sp"
+        android:background="@drawable/real_ettext_bubble"
+        android:paddingStart="10dp"
+        />
+
+    <TextView
+        android:layout_width="288dp"
+        android:layout_height="wrap_content"
+        android:text="입력한 이메일로 인증 메일이 전송됩니다.\n정확한 이메일을 입력해 주세요."
+        android:id="@+id/tvalert"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        android:layout_below="@+id/etschoolnumber"
+        />
+
+    <Button
+        android:text = "인증 메일 전송"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:textSize="15dp"
+        android:id="@+id/btnSendEmail"
+        android:textColor="#ffffff"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/tvalert"
+        android:background="@drawable/button_bubble"
+        />
+    </RelativeLayout>
+
+</RelativeLayout>

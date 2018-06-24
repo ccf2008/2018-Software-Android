@@ -1,0 +1,341 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeeeee"
+    android:clickable="true"
+    tools:context="com.example.myapplication.ProfileFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/colorPrimaryDark"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/layoutiv">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PNUM"
+                android:fontFamily="@font/font"
+                android:textColor="#ffffff"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:textSize="20sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/layoutimage"
+            android:padding="6dp"
+            android:background="#dfffffff"
+            android:layout_marginTop="60dp">
+
+            <ImageView
+                android:layout_width="330dp"
+                android:layout_height="330dp"
+                android:id="@+id/ivImage"
+                android:layout_centerInParent="true" />
+
+            <ProgressBar
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                android:id="@+id/pbLogin"
+                android:layout_marginTop="120dp"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="342dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp"
+            android:id="@+id/layoutshow"
+            android:background="#ffffff"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/layoutimage">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvtitle"
+                android:layout_marginLeft="20dp"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                />
+            <View
+                android:layout_below="@+id/tvtitle"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:id="@+id/vtitle"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/underline" >
+            </View>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="경매 시작가"
+                android:id="@+id/startprice"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/tvtitle"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvstartprice"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/startprice"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                />
+
+            <View
+                android:layout_below="@+id/tvstartprice"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:id="@+id/vprice"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/underline" >
+            </View>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="최종 낙찰가"
+                android:id="@+id/recentprice"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/tvstartprice"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvrecentprice"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/recentprice"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                />
+
+            <View
+                android:layout_below="@+id/tvrecentprice"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:id="@+id/vrecentprice"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/underline" >
+            </View>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="즉시구매가"
+                android:id="@+id/endprice"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/tvrecentprice"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvendprice"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/endprice"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                />
+
+            <View
+                android:layout_below="@+id/tvendprice"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:id="@+id/vendprice"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/underline" >
+            </View>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="경매 시작일"
+                android:id="@+id/time"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/tvendprice"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvtime"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/time"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                />
+
+            <View
+                android:layout_below="@+id/tvtime"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:id="@+id/vtime"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/underline" >
+            </View>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="경매 종료일"
+                android:id="@+id/endtime"
+                android:layout_marginLeft="20dp"
+                android:layout_below="@+id/vtime"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvendtime"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/endtime"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                />
+
+            <View
+                android:layout_below="@+id/tvendtime"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:id="@+id/vendtime"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/underline" >
+            </View>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvdetail"
+                android:layout_marginLeft="20dp"
+
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:layout_below="@+id/vendtime"
+                />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layoutshow"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="342dp"
+                android:id="@+id/profile"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_bubble"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                >
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:id="@+id/image" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/image"
+                    android:textSize="12sp"
+                    android:textColor="#000000"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/name"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/name"
+                    android:textColor="#000000"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="12sp"
+                    android:id="@+id/schoolnumber"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/image"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:id="@+id/email"
+                    android:layout_below="@+id/name"/>
+
+            </RelativeLayout>
+
+            <Button
+                android:text = "판매자와 대화하기"
+                android:layout_width="280dp"
+                android:layout_height="40dp"
+                android:textSize="15dp"
+                android:id="@+id/btnchat"
+                android:textColor="#ffffff"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_bubble"
+                android:layout_marginBottom="40dp"
+                android:layout_below="@+id/profile"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</ScrollView>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/pnum"
+        android:background="@drawable/title_layout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PNUM"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/font"
+            android:textColor="#ffffff"
+            android:textSize="25dp"
+            android:layout_centerHorizontal="true"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pnum">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingTop="10dp"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        >
+        <Button
+            android:layout_width="170dp"
+            android:layout_height="210dp"
+            android:background="#00ff0000"
+            android:layout_alignParentRight="true"
+            android:id="@+id/btnselect1"/>
+        <ImageView
+            android:layout_width="165dp"
+            android:layout_height="165dp"
+            android:id="@+id/ivItem"
+            android:layout_alignParentRight="true"
+            android:background="#ffffff" />
+        <TextView
+            android:layout_width="165dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivItem"
+            android:paddingStart="5dp"
+            android:id="@+id/title"
+            android:textStyle="bold"
+            android:textSize="12dp"
+            android:textColor="#000000"
+            android:background="#ffffff"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="2dp"
+            />
+        <TextView
+            android:layout_width="165dp"
+            android:paddingStart="5dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:id="@+id/price"
+            android:background="#ffffff"
+            android:textSize="14dp"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:layout_marginTop="2dp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingTop="10dp"
+        android:paddingRight="7dp"
+        android:paddingLeft="7dp"
+        >
+        <Button
+            android:layout_width="170dp"
+            android:layout_height="210dp"
+            android:background="#00ff0000"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/btnselect2"/>
+        <ImageView
+            android:layout_width="165dp"
+            android:layout_height="165dp"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/ivItem2"
+            android:background="#ffffff" />
+        <TextView
+            android:layout_width="165dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivItem2"
+            android:layout_alignParentLeft="true"
+            android:paddingStart="5dp"
+            android:id="@+id/title2"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:layout_marginTop="2dp"
+            />
+        <TextView
+            android:layout_width="165dp"
+            android:paddingStart="5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title2"
+            android:id="@+id/price2"
+            android:background="#ffffff"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:layout_marginTop="2dp"
+            />
+
+    </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

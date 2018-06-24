@@ -1,0 +1,223 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:clickable="true"
+    tools:context="com.example.myapplication.ProfileFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/colorPrimaryDark"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/layoutiv">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="경매등록"
+                android:layout_centerHorizontal="true"
+                android:textSize="20sp"
+                android:fontFamily="@font/font"
+                android:textColor="#ffffff"
+                android:layout_marginTop="7dp"
+                android:id="@+id/tvprofile"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:id="@+id/layoutimage"
+            android:padding="15dp"
+            android:background="@drawable/layout_bubble">
+
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:id="@+id/ivImage"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/ic_noimage_foreground"/>
+
+            <ProgressBar
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                android:id="@+id/pbLogin"
+                android:layout_marginTop="120dp"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp"
+            android:background="@drawable/layout_bubble"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/layoutimage">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="상품명을 입력해 주세요."
+                android:id="@+id/tvtitle"
+                android:layout_marginLeft="10dp"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                />
+
+            <EditText
+                android:layout_width="280dp"
+                android:layout_height="40dp"
+                android:hint=" 상품명"
+                android:id="@+id/ettitle"
+                android:layout_below="@+id/tvtitle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:maxLength="14"
+                android:background="@drawable/real_ettext_bubble"
+                android:paddingStart="10sp"
+                android:textSize="12sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="경매 시작가격을 책정해 주세요"
+                android:id="@+id/tvstartprice"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:layout_below="@+id/ettitle"/>
+
+            <EditText
+                android:layout_width="280dp"
+                android:layout_height="40dp"
+                android:hint="  경매 시작 가격"
+                android:id="@+id/etstartprice"
+                android:inputType="number"
+                android:layout_below="@+id/tvstartprice"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:maxLength="8"
+                android:background="@drawable/real_ettext_bubble"
+                android:paddingStart="10sp"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="물품의 즉시 구매 가격을 책정해 주세요"
+                android:id="@+id/tvendprice"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:layout_below="@+id/etstartprice"/>
+
+            <EditText
+                android:layout_width="280dp"
+                android:layout_height="40dp"
+                android:hint="  즉시 구매 가격"
+                android:id="@+id/etendprice"
+                android:inputType="number"
+                android:layout_below="@+id/tvendprice"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:maxLength="8"
+                android:background="@drawable/real_ettext_bubble"
+                android:paddingStart="10sp"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 제품 상세설명을 입력해 주세요."
+                android:id="@+id/tvdetail"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:layout_below="@+id/etendprice"
+                />
+
+            <EditText
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:hint="  상세설명"
+                android:id="@+id/etdetail"
+                android:layout_below="@+id/tvdetail"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:maxLines="6"
+                android:minHeight="40dp"
+                android:isScrollContainer="true"
+                android:background="@drawable/real_ettext_bubble"
+                android:paddingStart="10sp"
+                android:textSize="12sp"
+                />
+            <TextView
+            android:id="@+id/tvcategori"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etdetail"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:text=" 제품 분류를 선택 해 주세요."
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+            <Spinner
+                android:id="@+id/spcategori"
+                android:layout_width="280dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/tvcategori"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/real_ettext_bubble"
+                android:entries="@array/category"></Spinner>
+
+            <TextView
+                android:id="@+id/tvreadme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spcategori"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="  * 경매 기간은 48시간이며, 기간 종료 혹은\n     즉시구매가 입찰 시에 경매가 종료되어\n     최고가 입찰자와 대화가 가능해집니다.   "
+                android:textSize="10sp" />
+
+            <Button
+                android:text = "등록하기"
+                android:layout_width="280dp"
+                android:layout_height="40dp"
+                android:textSize="15dp"
+                android:id="@+id/btnfinalregister"
+                android:textColor="#ffffff"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/tvreadme"
+                android:background="@drawable/button_bubble"
+                />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</ScrollView>

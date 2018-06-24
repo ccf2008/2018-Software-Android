@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.example.myapplication.MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PNUM"
+        android:id="@+id/tvHello"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:fontFamily="@font/font"
+        android:textColor="#ffffff"
+        android:textSize="50sp"
+    />
+
+    <EditText
+        android:layout_width="310dp"
+        android:layout_height="50dp"
+        android:hint="  이메일"
+        android:id="@+id/etEmail"
+        android:layout_below="@+id/tvHello"
+        android:inputType="textWebEmailAddress"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/down_ettext_bubble"
+        android:paddingStart="10dp"
+        android:textSize="17dp"
+        />
+
+
+    <EditText
+        android:layout_width="310dp"
+        android:layout_height="50dp"
+        android:hint="  패스워드"
+        android:id="@+id/etPassword"
+        android:inputType="textPassword"
+        android:background="@drawable/ettext_bubble"
+        android:layout_below="@+id/etEmail"
+        android:layout_centerHorizontal="true"
+        android:paddingStart="10dp"
+        android:textSize="17dp"
+        />
+
+    <Button
+        android:text = "로그인"
+        android:layout_width="310dp"
+        android:layout_height="40dp"
+        android:id="@+id/btnLogin"
+        android:textAlignment="center"
+        android:layout_below="@+id/etPassword"
+        android:textColor="#ffffff"
+        android:textSize="17dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/sky_button_bubble"
+        />
+
+    <Button
+        android:text = "회원가입"
+        android:layout_width="310dp"
+        android:layout_height="40dp"
+        android:textSize="17dp"
+        android:id="@+id/btnRegister"
+        android:textColor="#ffffff"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="7dp"
+        android:layout_below="@+id/btnLogin"
+        android:background="@drawable/sky_button_bubble"
+        />
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/tvHello"
+            android:layout_marginTop="25dp"
+            android:id="@+id/pbLogin"
+            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="초기 로그인 이후에는 자동으로 로그인이 이루어집니다."
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff"
+        android:textSize="10dp"
+        android:layout_marginBottom="100dp"
+        android:layout_alignParentBottom="true"/>
+
+
+</RelativeLayout>

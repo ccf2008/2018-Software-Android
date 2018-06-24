@@ -1,0 +1,158 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:clickable="true"
+    tools:context="com.example.myapplication.ProfileFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@color/colorPrimaryDark"
+    android:layout_centerHorizontal="true"
+    android:id="@+id/layoutiv">
+
+    <RelativeLayout
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/title_layout_real_white"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/apptitle">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PNUM"
+            android:fontFamily="@font/font"
+            android:textSize="25dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/colorPrimaryDark"/>
+    </RelativeLayout>
+
+</RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:id="@+id/layoutimage"
+        android:paddingTop="20dp"
+        android:paddingBottom="10dp"
+
+        android:background="@drawable/layout_bubble">
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/ivUser"
+        android:layout_centerHorizontal="true"
+        android:background="#ffffff"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginTop="7dp"
+            android:layout_below="@+id/ivUser"
+            android:id="@+id/tvname"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:textSize="10sp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/tvname"
+            android:id="@+id/tvemail"/>
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/layoutimage"
+        android:layout_marginTop="30dp"
+        >
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:id="@+id/btnMymarket"
+            android:text="내 장터"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:background="@drawable/button_bubble"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"/>
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:id="@+id/btnMyoction"
+            android:text="내 경매"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:background="@drawable/button_bubble"
+            android:layout_below="@+id/btnMymarket"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"/>
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:id="@+id/btnMybid"
+            android:text="내가 낙찰한 상품"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:background="@drawable/button_bubble"
+            android:layout_below="@+id/btnMyoction"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"/>
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:id="@+id/btnLogout"
+            android:text="로그아웃"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:layout_below="@+id/btnMybid"
+            android:background="@drawable/button_bubble"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnLogout"
+            android:layout_marginBottom="40dp"
+            android:textColor="#aaaaaa"
+            android:textStyle="bold"
+            android:textSize="10dp"
+            android:text=" 로그아웃 시 다시 로그인 할 때까지\n자동 로그인이 이루어지지 않습니다."/>
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/pbLogin"
+        android:layout_marginTop="140dp"/>
+
+</RelativeLayout>
+
+</ScrollView>

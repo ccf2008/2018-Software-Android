@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/friend_list_line">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingLeft="7dp"
+        android:paddingTop="10dp"
+        android:paddingRight="7dp"
+   >
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="200dp"
+        android:id="@+id/ivUser"
+        android:layout_alignParentRight="true"
+        android:background="#dcdcdc" />
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivUser"
+            android:text="타이틀"
+            android:id="@+id/tvtitle"
+            android:background="#d3d3d3"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+       />
+        <TextView
+            android:layout_width="180dp"
+            android:text="가격"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvtitle"
+            android:id="@+id/tvtitle2"
+            android:layout_alignParentRight="true"
+            android:background="#d3d3d3"
+            android:layout_marginTop="10dp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingLeft="7dp"
+        android:paddingTop="10dp"
+        android:paddingRight="7dp"
+        >
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="200dp"
+            android:id="@+id/ivUser2"
+            android:layout_alignParentLeft="true"
+            android:background="#dcdcdc" />
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivUser2"
+            android:text="타이틀"
+            android:id="@+id/tvtitle3"
+            android:background="#d3d3d3"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
+            />
+        <TextView
+            android:layout_width="180dp"
+            android:text="가격"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvtitle3"
+            android:id="@+id/tvtitle4"
+            android:layout_alignParentLeft="true"
+            android:background="#d3d3d3"
+            android:layout_marginTop="10dp"
+            />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
