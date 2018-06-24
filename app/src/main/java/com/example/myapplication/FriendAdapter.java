@@ -37,7 +37,7 @@ import java.util.List;
 
 import jp.wasabeef.glide.transformations.CropCircleTransformation;
 
-public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.ViewHolder> {
+public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.ViewHolder> { // 현재 생성되어 있는 대화방 목록용 
 
     public List<Friend> mFriend;
     public String myuid;
@@ -72,13 +72,13 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.ViewHolder
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public FriendAdapter(List<Friend> mFriend, Context context) {
+    public FriendAdapter(List<Friend> mFriend, Context context) { // 프래그먼트로부터 대화방 정보를 받아옴
         this.mFriend = mFriend;
         this.context = context;
     }
 
     @Override
-    public int getItemViewType(int position) {
+    public int getItemViewType(int position) { // 첫번째 항목과 그렇지 않은 항목을 구분
         if(position==0){
             return 1;
         } else {
@@ -87,7 +87,7 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.ViewHolder
     }
     // Create new views (invoked by the layout manager)
     @Override
-    public FriendAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public FriendAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) { // 첫번째 항목과 그렇지 않은 항목을 다르게 표현
         // create a new view
         View v;
         if(viewType==1) {
@@ -104,7 +104,7 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.ViewHolder
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(final ViewHolder holder, final int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) { // 리스트의 정보 
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         final String stFriendid = mFriend.get(position).key;
@@ -176,7 +176,7 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.ViewHolder
 
 
 
-        holder.btnChat.setOnClickListener(new View.OnClickListener(){
+        holder.btnChat.setOnClickListener(new View.OnClickListener(){ // 채팅창으로 연결시켜주는 
             @Override
             public void onClick(View view){
                 Intent in = new Intent(context,ChatActivity.class);
