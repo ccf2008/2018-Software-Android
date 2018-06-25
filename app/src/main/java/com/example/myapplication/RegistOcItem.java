@@ -109,9 +109,12 @@ public class RegistOcItem extends AppCompatActivity { // 경매장 상품등록 
                 EditText etdetail = (EditText)findViewById(R.id.etdetail);
                 ImageView etimage = (ImageView)findViewById(R.id.ivImage);
                 Spinner spinner = (Spinner)findViewById(R.id.spcategori);
-
-                int startpricen = Integer.parseInt(etstartprice.getText().toString());
-                int endpricen = Integer.parseInt(etendprice.getText().toString());
+                
+                if(etstartprice.getText().toString().isEmpty()||etstartprice.getText().toString().equals("")||etendprice.getText().toString().isEmpty()||etendprice.getText().toString().equals("")){}                
+                else{
+                    int startpricen = Integer.parseInt(etstartprice.getText().toString());
+                    int endpricen = Integer.parseInt(etendprice.getText().toString());
+                }
 
                 if(ettitle.getText().toString().isEmpty()||ettitle.getText().toString().equals("")) Toast.makeText(RegistOcItem.this, "상품명을 입력해 주세요..", Toast.LENGTH_SHORT).show();
                 else if(etstartprice.getText().toString().isEmpty()||etstartprice.getText().toString().equals("")) Toast.makeText(RegistOcItem.this, "시작가격을 입력해 주세요.", Toast.LENGTH_SHORT).show();
